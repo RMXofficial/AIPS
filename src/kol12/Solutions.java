@@ -5,34 +5,31 @@ public class Solutions
 {
     public static void alterTeams(SLL devTeam, SLL qaTeam)
     {
-        SLLNode najmlad = qaTeam.first;
-        SLLNode pamti = null;
-        SLLNode dvizi = devTeam.getFirst();
-        int min = 9999;
-        while(najmlad!=null)
-        {
-            if(najmlad.age<=min)
-            {
-                min = najmlad.age;
-                pamti = najmlad;
+        SLLNode tmp1=devTeam.getFirst();
+        SLLNode tmp2=qaTeam.getFirst();
+        int min=100;
+        SLLNode tmp=qaTeam.getFirst();
+        while (tmp2 !=null){
+            if (tmp2.age <= min){
+                min=tmp2.age;
+                tmp=tmp2;
             }
-            najmlad=najmlad.succ;
+            tmp2=tmp2.succ;
         }
-        qaTeam.delete(pamti);
-        int size;
-        if(devTeam.length()%2==0)
-        {
-            size = devTeam.length()/2;
+        if (devTeam.length()%2==0){
+            for (int i = 1; i < devTeam.length() / 2; i++) {
+                tmp1 = tmp1.succ;
+            }
+            devTeam.insertAfter(tmp.id,tmp.age,tmp1);
         }
-        else
-        {
-            size = devTeam.length()/2 + 1;
+        else {
+            for (int i = 0; i < devTeam.length() / 2; i++) {
+                tmp1 = tmp1.succ;
+            }
+            devTeam.insertAfter(tmp.id,tmp.age,tmp1);
         }
-        for(int i=0;i<size;i++)
-        {
-            dvizi=dvizi.succ;
-        }
-        devTeam.insertBefore(pamti.id, pamti.age, dvizi);
+
+        qaTeam.delete(tmp);
     }
 
     public static void main(String[] args)
