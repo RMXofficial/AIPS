@@ -1,5 +1,5 @@
-//package lab2;
-//import java.util.Scanner;
+package lab2;
+import java.util.Scanner;
 //
 //class SLLNode<E> {
 //    protected E element;
@@ -182,46 +182,46 @@
 //        }
 //    }
 //}
-//
-//public class SpecialSLLDelete<E> {
-//
-//    //TODO: implement method
-//    public void specialDelete(SLL<Integer> list, int m) {
-//        SLLNode<Integer> tmp1=list.getFirst();
-////        int index=0;
-////        while(tmp1 != null){
-////            index++;
-////            if (index==m){
-////                index=0;
-////                list.delete(tmp1);
-////            }
-////            tmp1=tmp1.succ;
-////        }
-//        for (int i = 0; i < list.size(); i++) {
-//            if ((i+1)%m==0){
+
+public class SpecialSLLDelete<E> {
+
+    //TODO: implement method
+    public void specialDelete(SLL<Integer> list, int m) {
+        SLLNode<Integer> tmp1=list.getFirst();
+//        int index=0;
+//        while(tmp1 != null){
+//            index++;
+//            if (index==m){
+//                index=0;
 //                list.delete(tmp1);
 //            }
 //            tmp1=tmp1.succ;
 //        }
-//    }
-//
-//    public static void main(String[] args) {
-//        Scanner input = new Scanner(System.in);
-//
-//        int n = input.nextInt();
-//
-//        SLL<Integer> list = new SLL<>();
-//        for(int i=0;i<n;i++) {
-//            list.insertLast(input.nextInt());
-//        }
-//
-//        int m = input.nextInt();
-//
-//        SpecialSLLDelete<Integer> tmp = new SpecialSLLDelete<>();
-//
-//        tmp.specialDelete(list, m);
-//
-//        System.out.println(list);
-//    }
-//
-//}
+        for (int i = 0; i < list.size(); i++) {
+            if ((i+1)%m==0){
+                list.delete(tmp1);
+            }
+            tmp1=tmp1.succ;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n = input.nextInt();
+
+        SLL<Integer> list = new SLL<>();
+        for(int i=0;i<n;i++) {
+            list.insertLast(input.nextInt());
+        }
+
+        int m = input.nextInt();
+
+        SpecialSLLDelete<Integer> tmp = new SpecialSLLDelete<>();
+
+        tmp.specialDelete(list, m);
+
+        System.out.println(list);
+    }
+
+}
